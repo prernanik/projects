@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './login';
+import Home from './home'; 
+import BlogPost from "./blogpost";
+import Blog from './post';
+import Signup from './signup';
+
 
 function App() {
+  const [showLogin, setShowLogin] = useState(true);
+
+  const toggleSignup = () => {
+    setShowLogin(!showLogin);
+    console.log(`showLogin is now ${!showLogin}`);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/"element={showLogin ? (<Login toggleSignup={toggleSignup} />) : (<Signup toggleSignup={toggleSignup} />)}/>
+
+        {/* <Route path='/' element={<Login />} />  */}
+        <Route path='/home' element={<Home/>} />
+        <Route path="/blogpost" element={<BlogPost/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path='/post' element={<Blog/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

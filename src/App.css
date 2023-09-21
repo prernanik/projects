@@ -1,135 +1,189 @@
-  .login{
+.login {
+  max-width: 350px;
+  margin: 0 auto;
   text-align: center;
-  border: thick;
-  border: black;
-  margin: auto;
-  width: 20%;
-  border: 3px solid rgb(0, 0, 0);
-  padding: 10px;
-  padding: 5%;
-  margin-top: 50px;
-  
-  
- }
- #home_heading{
-    padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-  margin-top: 0px;
- }
- .button{
-    background-color: #e6f4e7; 
-     border: none;
-  color: rgb(0, 0, 0);
-  padding: 25px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username,
+.password {
+  width: 100%;
+  margin: 10px 0; /* Adjust margin to control vertical spacing */
+  padding: 10px; /* Add padding for better visual appearance */
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 16px;
-  position: -webkit-sticky;  
-  position: sticky;
-  top: 0;
-  width: 160px;
-  padding: 38x;
-  
- }
- .button:hover{
-    background-color: #ffffff;
- }
- #blogpost_heading{
-    padding: 20px;
-  text-align: center;
-  background: #0c0c0c;
-  color: white;
-  font-size: 60px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-btn {
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Add margin to separate the button from inputs */
+}
+
+.login-btn:disabled {
+  background-color: #b2dffc;
+  cursor: not-allowed;
+}
+
+.login-btn:hover {
+  background-color: #0083e8;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+p span {
+  color: #0095f6;
+  cursor: pointer;
+}
+
+p span:hover {
+  text-decoration: underline;
+}
+
+
+
+/* CSS for Navbar component */
+
+.home-container {
+  background-color: #0095f6;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.head {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.home-heading-style {
   font-size: 20px;
-  margin-top: 0px;
- }
-  .blogpost_tittle{
-    width: 60%;
-    align-items: center;
-    font-size: 20px;
-    padding: 10px;
-    margin: 60px;
- }
- .blogpost_name{
-   font-size: 25px; 
-   padding: 10px;
-   
+  font-weight: bold;
 }
-.blogpost_description{
-    width: 60%;
-    align-items: center;
-    font-size: 20px;
-    padding: 10px;
-    margin: 40px;
-    height: 30vh;
+
+.button-css {
+  background-color: #fff;
+  color: #0095f6;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.blogpost_button{
-    margin: 0;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: #e6f4e7;   
-   border: none; 
-   color: rgb(0, 0, 0);
-  padding: 25px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+
+.button-css:hover {
+  background-color: #007acc;
+  color: #fff;
+}
+
+/* CSS for Admin component */
+
+
+
+.blogpost_tittle,
+.blogpost_description {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 16px;
 }
-.blogpost_button:hover{
-    background-color: white;
-    /* font-family: 'Courier New', Courier, monospace'; */
-}  
 
+.blogpost_description {
+  height: 100px;
+    
+}
 
- #post_tittle{
-    font-size: 20px; 
- }
-#post_heading{
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(255, 255, 255);
-    background-color: #0c0c0c;
-    margin-top: 0px;
-    padding: 30px;
+.blogpost_button {
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
-#post_description{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-} 
- .post{
-    background-color: rgb(241, 238, 238);
-    padding:20px; 
-     margin: 10px;
+
+.blogpost_button:hover {
+  background-color: #0083e8;
 }
-.post:hover{
-    background-color: rgb(255, 255, 255);
+ */
+
+ /* App.css */
+
+#blogpost_heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Text color */
 }
-#myprofile_heading{
-    text-align: center;
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #000000;
-    color: white;
-    padding: 25px;
-    margin-top: 0px;
-} 
- .home_asidebutton{
-    background-color: #e6f4e7;
-    width: 15vw;
-    height: 100vh;
+
+form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
 }
-.home_aside{
-    position:relative; left:500px;  top:0px; 
+
+.blogpost_name {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555; /* Slightly darker text color */
 }
-.Like{
-    background-color: #000000;
-}  
+
+.blogpost_tittle,
+.blogpost_description {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333; /* Text color */
+}
+
+.blogpost_tittle:focus,
+.blogpost_description:focus {
+  outline: none;
+  border-color: #2684fe; /* Blue border color on focus */
+}
+
+.blogpost_button {
+  background-color: #3897f0; /* Instagram's primary blue color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.blogpost_button:hover {
+  background-color: #2684fe; /* Darker blue on hover */
+}

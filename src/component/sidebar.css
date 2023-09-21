@@ -1,0 +1,44 @@
+
+
+/* sidebar.css */
+
+.container {
+    background-color: #f7f7f7; /* Light gray background color */
+    width: 250px; /* Adjust the width as needed */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    padding-top: 20px;
+    margin-top: 90px;
+  }
+  
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-css {
+    background-color: #f0f7fd; /* Instagram's primary blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add spacing between links */
+    text-align: center;
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 16px;
+    width: 80%; /* Adjust the width as needed */
+  }
+  
+  .button-css:hover {
+    background-color: #2684fe; /* Darker blue on hover */
+  }
+  
+  /* Style for active link (you can add a class to the active link) */
+  .button-css.active {
+    background-color: #2684fe;
+  }
+  

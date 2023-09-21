@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './App.css';
 
-const Signup = ({ toggleSignup }) => {
+function Signup(props) {
     const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,10 +21,11 @@ const Signup = ({ toggleSignup }) => {
 
     };
 
-    axios.post('http://127.0.0.1:2000/users/register', data)
+    axios.post('https://blogapp-csk3.onrender.com/users/register', data)
       .then(response => {
         console.log(response.status);
         if (response.status === 200) {
+          props.onLogin();
           console.log("ff");
           navigate('/home'); 
         } else {
@@ -43,15 +44,19 @@ const Signup = ({ toggleSignup }) => {
   return (
     <>
     <div className="login">
-       <input type='text' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
-       <input type='text' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
+       <input type='text' className="username" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
+       <input type='text'className="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
 
-       <input type='text' placeholder='emailid' value={email} onChange={(e) => setEmail(e.target.value)} /><br></br>
+       <input type='text'className="email" placeholder='emailid' value={email} onChange={(e) => setEmail(e.target.value)} /><br></br>
 
 
-         <button  onClick={handleSubmit} disabled={isbuttondisabled}>Signup</button>
-         <p>Already have an account?{' '}<span onClick={toggleSignup} style={{ cursor: 'pointer' }}>Log In</span></p>
-         </div>
+         <button className="login-btn" onClick={handleSubmit} disabled={isbuttondisabled}>Signup</button>
+         <p className='signup-p'>
+          Already have an account?{' '}
+          <span className="signup-span" onClick={()=>{props.togglesignup()}} style={{ cursor: 'pointer' }}>
+            Log In
+          </span>
+        </p>         </div>
 
     </>
   );

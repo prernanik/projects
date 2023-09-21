@@ -1,0 +1,190 @@
+
+
+ /* .blog-container{
+  margin-top: 0px;
+}
+.blog-content {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-left: 270px;
+}
+
+.blog-post {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.post_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post_description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.like-button {
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.like-button.liked {
+  background-color: #ff5252; 
+} 
+
+.like-button:hover {
+  background-color: #0083e8;
+}
+
+.like-icon {
+  margin-right: 5px;
+}
+
+input[type="text"],
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #0095f6;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0083e8;
+}  */
+
+
+/* post.css */
+
+.blog-container {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fafafa; 
+  margin-left: 250px;
+  margin-top: 20px;
+}
+
+.blog-content {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+.blog-post {
+  margin-bottom: 20px;
+  padding: 16px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  background-color: #fff; /* White background */
+}
+
+.post_title {
+  font-size: 24px;
+  margin: 0;
+  color: #333; /* Text color */
+}
+
+.post_description {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #555; /* Slightly darker text color */
+}
+
+.comments {
+  margin-top: 16px;
+  width: 20px;
+  
+}
+
+.comment {
+  font-size: 14px;
+  margin-top: 8px;
+   
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #3897f0; /* Instagram's primary blue color */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+button.like-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.like-button .fa-regular.fa-heart {
+  color: #f00; /* Heart color when liked */
+}
+
+.like-button.liked .fa-regular.fa-heart {
+  color: #f00; /* Heart color when liked */
+}
+
+.like-icon {
+  margin-right: 4px;
+}
+
+/* Style for active link (you can add a class to the active link) */
+.button-css.active {
+  background-color: #2684fe;
+}

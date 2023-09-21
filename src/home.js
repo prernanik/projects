@@ -8,23 +8,25 @@ import { useEffect } from "react";
 
 
 
+
 function Home() {
    
   const [showBlog, setShowBlog] = useState(false);
   const [blogData, setBlogData] = useState([]);
+  const [likes,setLikes]=useState({});
 
 
   const navigate=useNavigate();
-  const handleLogout = () => {
-    localStorage.removeItem('user'); // Remove user from localStorage
-    navigate('/login'); // Redirect to the login page after logout
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('user'); // Remove user from localStorage
+  //   navigate('/login'); // Redirect to the login page after logout
+  // };
    
 
   useEffect(() => {
     if (showBlog) {
       
-      axios.get('http://127.0.0.1:2000/api/get')
+      axios.get('https://blogapp-csk3.onrender.com/api/get')
         .then(response => {
           setBlogData(response.data);
         })
@@ -39,8 +41,16 @@ function Home() {
   const handleBlog = () => {
     setShowBlog(true); 
   };
-   
+  const handleLike = (postId) => {
+    setLikes((prevLikes) => ({
+        ...prevLikes,
+        [postId]: (prevLikes[postId] || 0) + 1,
+    }));
+};
 
+const handlelogout=()=>{
+  navigate('/');
+}
   return (<>
   
     <div className="home_parent">
@@ -49,7 +59,8 @@ function Home() {
       <div className="home_asidebutton"> 
       <Link to="/blogpost" className="button">Create</Link><br></br>
       <button className="button" onClick={handleBlog}>Blog</button> 
-       <button onClick={handleLogout} className="button">Logout</button>
+      <button className="button"onClick={handlelogout}>Logout</button>
+       {/* <button onClick={handleLogout} className="button">Logout</button> */}
        </div>
 
       <div className="home_child_2">
@@ -61,6 +72,11 @@ function Home() {
             <div key={index} className='blog-post'>
               <h3>{post.title}</h3>
               <p>{post.description}</p>
+              <button className={`like-button ${likes[post.id] > 0 ? 'liked' : ''}`}onClick={() => handleLike(post.id)} >
+              <span className="like-icon"><i class="fa-regular fa-heart"></i></span> Like ({likes[post.id] || 0})
+              </button>
+     
+
             </div>
           ))}
         </div>

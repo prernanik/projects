@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Homepage from "./component/homepage";
+import './App.css';
 function Admin(){
     const [title,setTitle]=useState('');
     const [description,setDescription]=useState('');
     const handleSubmit=(e)=>{
         e.preventDefault();
+        const userId=JSON.parse(sessionStorage.getItem('userData'))
         const data = {
             title,
             description,
+            author:userId._id
         
           };
-        axios.post('http://127.0.0.1:2000/api/posts',data)
+        axios.post('https://blogapp-csk3.onrender.com/api/posts',data)
         .then(response=>{
             if(response.status===201){
 
@@ -28,7 +32,7 @@ function Admin(){
     }
     return(
         <>
-        
+       
         <h2 id="blogpost_heading">Create a new post</h2>
       <form onSubmit={handleSubmit}>
         <label className="blogpost_name">

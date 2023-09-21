@@ -2,9 +2,10 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from "react";
+import Homepage from "./component/homepage";
 import './App.css';
 
-const Login = ({ toggleSignup }) => {
+function Login(props) {
   const [users, setUsers] = useState([]);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -19,13 +20,16 @@ const Login = ({ toggleSignup }) => {
   
     const handleLogin = (event) => {
         event.preventDefault(); 
-      axios.post('http://localhost:2000/api/login', { username, password })
+      axios.post('https://blogapp-csk3.onrender.com/api/login', { username, password })
 
       .then((response) => {
           setUsers(response.data);
-          if (users) {     
+          if (response.data) {  
+            console.log(response.data); 
+            sessionStorage.setItem('userData',JSON.stringify(response.data))
+            props.onLogin();  
              
-            navigate('/home');
+            navigate('/homepage');
           
         }
         })
@@ -47,14 +51,14 @@ const Login = ({ toggleSignup }) => {
   };
   
     return (
-      <div class="login">
+      <div className="login">
         <form onSubmit={handleLogin}>
-          <input type='text' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
-          <input type='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
+          <input type='text' className="username"placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} /><br></br>
+          <input type='password'className="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} /><br></br>
           <button type='submit' className='login-btn' disabled={isbuttondisabled}>
             Login
           </button>
-         <p>Create account{' '}<span onClick={toggleSignup} style={{ cursor: 'pointer' }}>Sign up</span></p> 
+         <p>Create account{' '}<span onClick={()=>{props.toggleSignup()}} style={{ cursor: 'pointer' }}>Sign up</span></p> 
 
         </form>
         {loginerror && <p>{loginerror}</p>}

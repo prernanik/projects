@@ -1,0 +1,38 @@
+/* homepage.css */
+
+.home-container {
+  background-color: #fff; /* Set background color to white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  padding: 16px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-heading-style {
+  font-size: 20px;
+  font-weight: 600; /* Set font weight to make it bold */
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
+.button-css {
+  background-color: #1a1a25; /* Instagram's primary blue color */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 90px;
+  margin-top: 9px;
+  
+}
+
+.button-css:hover {
+  background-color: #2684fe; /* Darker blue on hover */
+}

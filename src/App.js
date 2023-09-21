@@ -1,35 +1,49 @@
-import React from 'react';
-import './App.css';
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './login';
-import Home from './home'; 
-import BlogPost from "./blogpost";
-import Blog from './post';
-import Signup from './signup';
+ 
+import React from "react";
+import "./App.css";
+import Login from "./login";
+import Signup from "./signup";
+import { useEffect } from "react";
+import { useState } from "react";
+import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom";
+import Homepage from "./component/homepage";
+import Blog from "./post";
+import Admin from "./blogpost";
 
+function App(){
+    const [showLogin, setShowLogin] = useState(true);
+    const[isAuthenticated, setIsAuthenticated]= useState(false);
 
-function App() {
-  const [showLogin, setShowLogin] = useState(true);
-
-  const toggleSignup = () => {
+    const toggleSignup = () => {
     setShowLogin(!showLogin);
     console.log(`showLogin is now ${!showLogin}`);
   };
-  return (
-    <BrowserRouter>
-      <Routes>
-      <Route path="/"element={showLogin ? (<Login toggleSignup={toggleSignup} />) : (<Signup toggleSignup={toggleSignup} />)}/>
+   const handleLogin=()=>{
+      setIsAuthenticated(true);
+   };
+   const handlelogout=()=>{
+      setIsAuthenticated(false)
+   }
 
-        {/* <Route path='/' element={<Login />} />  */}
-        <Route path='/home' element={<Home/>} />
-        <Route path="/blogpost" element={<BlogPost/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path='/post' element={<Blog/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-      </Routes>
-    </BrowserRouter>
-  );
+    
+     return(<>
+        <BrowserRouter>    
+        <Routes>
+       {/* <Route path="/login" element={<Login/>}/>  */}
+
+       <Route path="/"element={showLogin ? (isAuthenticated ?(<Navigate to="/homepage"/>) :(<Login onLogin={handleLogin} toggleSignup={toggleSignup} />)) : (isAuthenticated ? ( <Navigate to="/homepage"/>):(<Signup toggleSignup={toggleSignup} />))}/>
+       {/* <Route path='/signup' element={<Signup/>}/>  */}
+
+        
+
+
+       <Route path="homepage" element={isAuthenticated ? <Homepage onLogout={handlelogout}/> : <Navigate to="/"/>}/>
+      <Route path="post" element={isAuthenticated ? <Blog/> : <Navigate to="/"/>}/>
+      <Route path="blogpost" element={isAuthenticated ? <Admin/> : <Navigate to="/"/>}/>
+
+        </Routes>
+        </BrowserRouter>
+     
+     </>)
 }
-
 export default App;

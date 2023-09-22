@@ -5,7 +5,7 @@ import { useState } from "react";
  import './App.css';
 
 function Login(props) {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginerror, setLoginerror] = useState('');
@@ -22,7 +22,7 @@ function Login(props) {
       axios.post('https://blogapp-csk3.onrender.com/api/login', { username, password })
 
       .then((response) => {
-          setUsers(response.data);
+          // setUsers(response.data);
           if (response.data) {  
             console.log(response.data); 
             sessionStorage.setItem('userData',JSON.stringify(response.data))

@@ -54,7 +54,7 @@ function Signup(props) {
          <button className="login-btn" onClick={handleSubmit} disabled={isbuttondisabled}>Signup</button>
          <p className='signup-p'>
           Already have an account?{' '}
-          <span className="signup-span" onClick={()=>{props.togglesignup()}} style={{ cursor: 'pointer' }}>
+          <span className="signup-span" onClick={()=>{props.toggleSignup()}} style={{ cursor: 'pointer' }}>
             Log In
           </span>
         </p>         </div>

@@ -3,10 +3,10 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import "./post.css";
-import Homepage from "./component/homepage";
+// import Homepage from "./component/homepage";
 
 function Blog() {
   const [posts, setPosts] = useState([]);

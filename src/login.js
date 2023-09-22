@@ -2,8 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from "react";
-import Homepage from "./component/homepage";
-import './App.css';
+ import './App.css';
 
 function Login(props) {
   const [users, setUsers] = useState([]);
@@ -11,10 +10,10 @@ function Login(props) {
     const [password, setPassword] = useState('');
     const [loginerror, setLoginerror] = useState('');
     const [isbuttondisabled,setIsButtonDisabled]= useState(true);
-    const [logout,setLogout]=useState(false);
 
    
-    const navigate = useNavigate();
+    const navigate = useNavigate(    // const [logout,setLogout]=useState(false);
+);
 
 
   
@@ -43,12 +42,12 @@ function Login(props) {
   }, [username, password]);
 
 
-  const handleLogout = () => {
-    localStorage.removeItem('user'); 
-    setLogout(false);
-    setUsername('');
+  // const handleLogout = () => {
+  //   localStorage.removeItem('user'); 
+  //   setLogout(false);
+  //   setUsername('');
     
-  };
+  // };
   
     return (
       <div className="login">

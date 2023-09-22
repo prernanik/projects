@@ -3,7 +3,6 @@ import React from "react";
 import "./App.css";
 import Login from "./login";
 import Signup from "./signup";
-import { useEffect } from "react";
 import { useState } from "react";
 import { BrowserRouter,Routes,Route,Navigate } from "react-router-dom";
 import Homepage from "./component/homepage";
@@ -31,7 +30,7 @@ function App(){
         <Routes>
        {/* <Route path="/login" element={<Login/>}/>  */}
 
-       <Route path="/"element={showLogin ? (isAuthenticated ?(<Navigate to="/homepage"/>) :(<Login onLogin={handleLogin} toggleSignup={toggleSignup} />)) : (isAuthenticated ? ( <Navigate to="/homepage"/>):(<Signup toggleSignup={toggleSignup} />))}/>
+       <Route path="/"element={showLogin ? (isAuthenticated ?(<Navigate to="/homepage"/>) :(<Login onLogin={handleLogin} toggleSignup={toggleSignup} />)) : (isAuthenticated ? ( <Navigate to="/homepage"/>):(<Signup onLogin={handleLogin} toggleSignup={toggleSignup} />))}/>
        {/* <Route path='/signup' element={<Signup/>}/>  */}
 
         

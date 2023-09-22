@@ -25,9 +25,10 @@ function Signup(props) {
       .then(response => {
         console.log(response.status);
         if (response.status === 200) {
+         
           props.onLogin();
           console.log("ff");
-          navigate('/home'); 
+          navigate('/homepage'); 
         } else {
           console.log('failed to post');
         }

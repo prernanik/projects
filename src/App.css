@@ -16,8 +16,8 @@
 .username,
 .password {
   width: 100%;
-  margin: 10px 0; /* Adjust margin to control vertical spacing */
-  padding: 10px; /* Add padding for better visual appearance */
+  margin: 10px 0; 
+  padding: 10px; 
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -31,7 +31,7 @@
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; /* Add margin to separate the button from inputs */
+  margin-top: 10px; 
 }
 
 .login-btn:disabled {
@@ -139,7 +139,7 @@ p span:hover {
 #blogpost_heading {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333; /* Text color */
+  color: #333; 
 }
 
 form {
@@ -147,35 +147,35 @@ form {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff; /* White background */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  background-color: #fff;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
 }
 
 .blogpost_name {
   display: block;
   margin-bottom: 20px;
   font-size: 16px;
-  color: #555; /* Slightly darker text color */
+  color: #555; 
 }
 
 .blogpost_tittle,
 .blogpost_description {
   width: 100%;
   padding: 10px;
-  border: 1px solid #e0e0e0; /* Light gray border */
+  border: 1px solid #e0e0e0;  
   border-radius: 4px;
   font-size: 16px;
-  color: #333; /* Text color */
+  color: #333; 
 }
 
 .blogpost_tittle:focus,
 .blogpost_description:focus {
   outline: none;
-  border-color: #2684fe; /* Blue border color on focus */
+  border-color: #2684fe;  
 }
 
 .blogpost_button {
-  background-color: #3897f0; /* Instagram's primary blue color */
+  background-color: #3897f0;  
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -185,12 +185,11 @@ form {
 }
 
 .blogpost_button:hover {
-  background-color: #2684fe; /* Darker blue on hover */
+  background-color: #2684fe;  
 }
 
 
-/* css for google signup */
-
+ 
 .oauth-buttons {
   display: flex;
   flex-direction: column;
@@ -210,29 +209,26 @@ form {
 }
 
 .signup-button.google-button {
-  background-color: #4285f4; /* Google blue */
+  background-color: #4285f4;  
 }
 
 .signup-button.github-button {
-  background-color: #333; /* GitHub dark gray */
+  background-color: #333;  
 }
 
 .signup-button:hover {
-  background-color: #555; /* Darken the button color on hover */
+  background-color: #555;  
 }
 
 
-/* css got google login */
-
-/* Styling for the parent container */
-.login-buttons-container {
+ 
+ .login-buttons-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Common styles for both buttons */
-.login-button {
+ .login-button {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -242,20 +238,18 @@ form {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  width: 200px; /* Adjust the width as needed */
+  width: 200px; 
 }
 
-/* Styles for the "Continue with Google" button */
-.login-button.google-button {
-  background-color: #4285f4; /* Google blue */
+ .login-button.google-button {
+  background-color: #4285f4; 
 }
 
-/* Styles for the "Continue with GitHub" button */
-.login-button.github-button {
-  background-color: #333; /* GitHub dark gray */
+ .login-button.github-button {
+  background-color: #333; 
 }
 
-/* Hover effect for both buttons */
+
 .login-button:hover {
-  background-color: #555; /* Darken the button color on hover */
+  background-color: #555;  
 }

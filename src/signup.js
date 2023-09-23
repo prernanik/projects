@@ -49,11 +49,10 @@ const handleGoogleSignup = () => {
 const handleGitHubSignup = () => {
   // Redirect the user to the GitHub OAuth authorization URL
 
-  fetch('https://blogapp-csk3.onrender.com/github-auth') // Update the URL as needed to match your server route
+  fetch('https://blogapp-csk3.onrender.com/github-auth')  
       .then((response) => response.json())
       .then((data) => {
-        // Redirect the user to the GitHub OAuth authorization URL
-        window.location.href = data.githubAuthUrl; // Assuming your server returns the URL as 'githubAuthUrl'
+         window.location.href = data.githubAuthUrl; // Assuming your server returns the URL as 'githubAuthUrl'
       })
       .catch((error) => {
         console.error('Error fetching GitHub authorization URL:', error);

@@ -187,3 +187,75 @@ form {
 .blogpost_button:hover {
   background-color: #2684fe; /* Darker blue on hover */
 }
+
+
+/* css for google signup */
+
+.oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.signup-button.google-button {
+  background-color: #4285f4; /* Google blue */
+}
+
+.signup-button.github-button {
+  background-color: #333; /* GitHub dark gray */
+}
+
+.signup-button:hover {
+  background-color: #555; /* Darken the button color on hover */
+}
+
+
+/* css got google login */
+
+/* Styling for the parent container */
+.login-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Common styles for both buttons */
+.login-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 200px; /* Adjust the width as needed */
+}
+
+/* Styles for the "Continue with Google" button */
+.login-button.google-button {
+  background-color: #4285f4; /* Google blue */
+}
+
+/* Styles for the "Continue with GitHub" button */
+.login-button.github-button {
+  background-color: #333; /* GitHub dark gray */
+}
+
+/* Hover effect for both buttons */
+.login-button:hover {
+  background-color: #555; /* Darken the button color on hover */
+}

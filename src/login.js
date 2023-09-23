@@ -32,6 +32,9 @@ function Login(props) {
           
         }
         })
+
+       
+
         .catch((error) => {
           console.log("Error:", error);
           setLoginerror('Invalid username or password');
@@ -41,6 +44,27 @@ function Login(props) {
       setIsButtonDisabled(!(username && password));
   }, [username, password]);
 
+
+  const handleGoogleLogin = () => {
+    // Redirect the user to the Google OAuth authorization URL
+    window.location.href = 'URL_TO_GOOGLE_OAUTH_AUTHORIZATION';
+  };
+
+  const handleGitHubLogin = () => {
+    // Redirect the user to the GitHub OAuth authorization URL
+
+    fetch('https://blogapp-csk3.onrender.com/github-auth') // Update the URL as needed to match your server route
+      .then((response) => response.json())
+      .then((data) => {
+        // Redirect the user to the GitHub OAuth authorization URL
+        window.location.href = data.githubAuthUrl; // Assuming your server returns the URL as 'githubAuthUrl'
+      })
+      .catch((error) => {
+        console.error('Error fetching GitHub authorization URL:', error);
+      });
+
+    //window.location.href = 'URL_TO_GITHUB_OAUTH_AUTHORIZATION';
+  };
 
   // const handleLogout = () => {
   //   localStorage.removeItem('user'); 
@@ -61,6 +85,15 @@ function Login(props) {
 
         </form>
         {loginerror && <p>{loginerror}</p>}
+
+        <div className="oauth-buttons">
+        <button className="login-button" onClick={handleGoogleLogin}>
+          Continue with Google
+        </button>
+        <button className="login-button" onClick={handleGitHubLogin}>
+          Continue with GitHub
+        </button>
+      </div>
  
       </div>
     );

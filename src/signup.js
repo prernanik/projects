@@ -41,6 +41,25 @@ function Signup(props) {
     setIsButtonDisabled(!(username && password && email));
 }, [username, password,email]);
 
+const handleGoogleSignup = () => {
+  // Redirect the user to the Google OAuth authorization URL
+  window.location.href = 'URL_TO_GOOGLE_OAUTH_AUTHORIZATION';
+};
+
+const handleGitHubSignup = () => {
+  // Redirect the user to the GitHub OAuth authorization URL
+
+  fetch('https://blogapp-csk3.onrender.com/github-auth') // Update the URL as needed to match your server route
+      .then((response) => response.json())
+      .then((data) => {
+        // Redirect the user to the GitHub OAuth authorization URL
+        window.location.href = data.githubAuthUrl; // Assuming your server returns the URL as 'githubAuthUrl'
+      })
+      .catch((error) => {
+        console.error('Error fetching GitHub authorization URL:', error);
+      });
+ // window.location.href = 'URL_TO_GITHUB_OAUTH_AUTHORIZATION';
+};
 
   return (
     <>
@@ -57,8 +76,18 @@ function Signup(props) {
           <span className="signup-span" onClick={()=>{props.toggleSignup()}} style={{ cursor: 'pointer' }}>
             Log In
           </span>
-        </p>         </div>
 
+        </p>         </div>
+        <div className="oauth-buttons">
+        <button className="signup-button" onClick={handleGoogleSignup}>
+          Sign Up with Google
+        </button>
+        <button className="signup-button" onClick={handleGitHubSignup}>
+          Sign Up with GitHub
+        </button>
+      </div>
+    
+    
     </>
   );
 }

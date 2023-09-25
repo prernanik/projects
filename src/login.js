@@ -47,7 +47,7 @@ function Login(props) {
 
   const handleGoogleLogin = () => {
     // Redirect the user to the Google OAuth authorization URL
-    window.location.href = 'URL_TO_GOOGLE_OAUTH_AUTHORIZATION';
+    window.location.href = 'https://blogapp-csk3.onrender.com/auth/google';
   };
 
   const handleGitHubLogin = () => {
